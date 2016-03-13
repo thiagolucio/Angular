@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
-//var uglify = require('gulp-uglify'); - nao há necessidade de rodar ele agora
 var clean = require('gulp-clean');
+var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var server = require('gulp-server-livereload');
 
@@ -24,20 +24,23 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
+
 //uglify com processo de clean antes de recriar a pasta dist JS
 gulp.task('uglify', ['clean'], function() {
-  return gulp.src('app/js/*.js')
-  .pipe(concat('scripts.js'))
+  return gulp.src(['app/js/*.js', 'app/**/*.js'])
+  	.pipe(uglify())
+  	.pipe(concat('scripts.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
 //uglify com processo de clean antes de recriar a pasta dist CSS
 gulp.task('uglify', ['clean'], function() {
   return gulp.src('app/css/*.css')
-  .pipe(concat('style-concat.css'))
+  	.pipe(uglify())
+  	.pipe(concat('app.min.css'))
     .pipe(gulp.dest('dist/css'));
 });
-
+//uglify - dá pra colocar os dois itens acima, JS e css numa única linha mas aqui está declarado por tasks separadas pra entender melhor
 
 //servidor localhost
 gulp.task('webserver', function() {
