@@ -1,0 +1,48 @@
+<!-- https://www.youtube.com/watch?v=R10BxB1w3oo -->
+<!DOCTYPE html>
+<html ng-app="demo">
+	<head>
+		<meta charset="utf-8">
+		<!-- CSS -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="bower_components/md-checkbox/md-checkbox.css">
+		<!-- JS -->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/npm.js"></script>
+		<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
+		<script type="text/javascript" src="bower_components/ngMask/dist/ngMask.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- CSS Projeto -->
+		<link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+			<script>
+			angular.module("demo", ["ngGenericMask"]);
+			angular.module("demo").controller("demoController", function ($scope){
+				$scope.date = "10102010";
+				$scope.cpf = "9999999999";
+				$scope.cnpj = "9999999999";
+				$scope.cep = "88066018";
+				$scope.telefone = "4884037518";
+			});
+			</script>
+		<title>Aprendendo Angular JS com Angular Material</title>
+	</head>
+	<body ng-controller="demoController">
+		<label>Mascara de Data XX/XX/XXXX</label>
+		<input name="date" ng-model="date" required mask="XX/XX/XXXX">
+		<label>Mascara de CPF XX.XXX.XXX-XX</label>
+		<input name="cpf" ng-model="cpf" mask="XX.XXX.XXX-XX">
+		<label>Mascara de CNPJ XX.XXX.XXX/XXXX-XX</label>
+		<input name="cnpj" ng-model="cnpj" mask="XX.XXX.XXX/XXXX-XX">
+		<label>Mascara de CEP XXXXX-XX</label>
+		<input name="cep" ng-model="cep" mask="XXXXX-XXX">
+		<label>Mascara de Telefone (XX) XXXX-XXXX</label>
+		<input name="telefone" ng-model="telefone" mask="(XX) XXXX-XXXX">
+	</body>
+</html>
