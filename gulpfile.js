@@ -28,15 +28,15 @@ gulp.task('jshint', function() {
 //uglify com processo de clean antes de recriar a pasta dist JS
 gulp.task('uglify', ['clean'], function() {
   return gulp.src(['app/js/*.js', 'app/**/*.js'])
-  	.pipe(uglify())
-  	.pipe(concat('scripts.js'))
+  	//.pipe(uglify())
+  	.pipe(concat('scripts.min.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
 //uglify com processo de clean antes de recriar a pasta dist CSS
 gulp.task('uglify', ['clean'], function() {
   return gulp.src('app/css/*.css')
-  	.pipe(uglify())
+  	//.pipe(uglify())
   	.pipe(concat('app.min.css'))
     .pipe(gulp.dest('dist/css'));
 });
@@ -48,6 +48,7 @@ gulp.task('webserver', function() {
     .pipe(server({
       livereload: true,
       directoryListing: true,
+	  port: 8081,
       open: true
     }));
 });
