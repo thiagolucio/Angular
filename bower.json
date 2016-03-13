@@ -1,0 +1,28 @@
+{
+  "name": "ANGULAR",
+  "description": "angular blank",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "blank"
+  ],
+  "authors": [
+    "thiago lucio bittencourt"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/thiagolucio/Angular.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "3.3.6",
+    "angular-material": "1.0.6",
+    "font-awesome": "4.5.0"
+  }
+}
